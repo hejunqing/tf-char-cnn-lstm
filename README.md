@@ -3,7 +3,7 @@ A Tensorflow version of Yoon Kim's char-cnn-lstm [Torch7 code](https://github.co
 
 It is a boosting and amended version of [mkroutikov's work](https://github.com/mkroutikov/tf-lstm-char-cnn),to fix some mistakes and improve the speed.Now the training time is within 4 hours on large model, much faster than the original 20+ hours.And we can get better result at the same time.
 
-A simplified and neaty version called **train_sim.py** is also provided for beginners,aimed to make the whole process easy to understand.It is identical to the train.py, but in a straight-forward style. 
+A simplified and neaty version called **models.py** is also provided for beginners,aimed to make the whole process easy to understand.It is identical to the model.py, but in a straight-forward style, inspired by [sherjilozair](https://github.com/sherjilozair/char-rnn-tensorflow)
 
 ## requirement
 
@@ -14,7 +14,10 @@ cuda and cudnn should be installed for gpu implement
 Train:
 ```sh
 python train_gpu.py
+or
+python train_sim.py
 ```
+*train_sim.py uses the models.py,which produces the same result*
 Evaluate
 ```sh
 python evaluate_gpu.py
@@ -31,7 +34,7 @@ python evaluate_gpu.py --gpuid -1
 Large model of Yoon Kim's paper will be trained on PTB and also evaluated.
 
 ## Time
-The training time the large model is about 3.5~3.8 hour on a GPU(k20),while the lua code of Yoon Kim is about 5 hours on a GPU.
+The training time the large model is about 3.5~3.8 hour on a GPU(k20) with 0.4sec/batch,while the lua code of Yoon Kim is about 5 hours on a GPU.
 
 
 ## Result
