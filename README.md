@@ -11,14 +11,15 @@ Tensorflow 0.10
 cuda and cudnn should be installed for gpu implement
 
 ## usage
-Train:
+ - Train:
 ```sh
 python train_gpu.py
 or
 python train_sim.py
 ```
 *train_sim.py uses the models.py,which produces the same result*
-Evaluate
+
+ - Evaluate
 ```sh
 python evaluate_gpu.py
 ```
