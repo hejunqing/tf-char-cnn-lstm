@@ -40,13 +40,13 @@ The training time the large model is about 3.5~3.8 hour on a GPU(k20) with 0.4se
 ![img](https://raw.githubusercontent.com/hejunqing/tf-char-cnn-lstm/master/train_loss_0.5.png)
 
 
-## Results
+## Previous Results
 | Learning rate  |  Train/Valid/Test loss  |  Train/Valid/Test perplexity  |
 |:--------------:|:-----------------------:|:------------------------------|
 | 1.0            | 4.057 / 4.503 / 4.463   | 57.77 / 90.25 / 86.79         |
 | 0.5            | 3.984 / 4.432 / 4.391   | 53.71 / 84.06 / **80.73**     |
 
-The best result is 80.73 of PPL, which is similar to the **79** of Yoon Kim's result.
+**Now the results of models trained on new codes should be identical to Yoon Kim's, as listed in [mkroutikov's work](https://github.com/mkroutikov/tf-lstm-char-cnn)**
 
 
 
