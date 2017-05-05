@@ -127,7 +127,7 @@ class Model():
         with tf.variable_scope('LSTM'):
             cell = tf.nn.rnn_cell.BasicLSTMCell(args.rnn_size, state_is_tuple=True, forget_bias=0.0)
             if args.dropout > 0.0:
-                cell = tf.nn.rnn_cell.DropoutWrapper(cell, input_keep_prob=1.-args.dropout)
+                cell = tf.nn.rnn_cell.DropoutWrapper(cell, output_keep_prob=1.-args.dropout)
             if args.rnn_layers > 1:
                 cell = tf.nn.rnn_cell.MultiRNNCell([cell] * args.rnn_layers, state_is_tuple=True)
 
@@ -141,9 +141,6 @@ class Model():
                                                  initial_state=self.initial_rnn_state, dtype=tf.float32) #origin
 
             self.final_rnn_state=state
-            if args.dropout > 0.0:
-                outputs=tf.nn.dropout(outputs,keep_prob=1.-args.dropout)#hjq
-                #[batchsize,rnn_size]
 
             # linear projection onto output (word) vocab
             self.logits = []
